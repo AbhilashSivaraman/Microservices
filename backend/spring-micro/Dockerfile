@@ -13,7 +13,7 @@ RUN apt-get update && \
 ENV MAVEN_HOME=/opt/maven
 ENV PATH=${MAVEN_HOME}/bin:${PATH}
 
-# Set the working directory
+# Set the working directory0
 WORKDIR /app
 
 # Copy the source code and pom.xml

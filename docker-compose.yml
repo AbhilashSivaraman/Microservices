@@ -6,8 +6,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: login_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: rootpassword
     ports:
       - "3307:3306"
     healthcheck:
@@ -19,9 +17,10 @@ services:
       - mynetwork
 
   backend:
-    build:
-      context: ./backend/spring-micro
-      dockerfile: Dockerfile
+    # build:
+    #   context: ./backend/spring-micro
+    #   dockerfile: Dockerfile
+    image: abhilashsivaraman/react-spring:backend
     ports:
       - "8080:8080"
     environment:
@@ -35,9 +34,10 @@ services:
       - mynetwork
 
   frontend:
-    build:
-      context: ./frontend/myapp
-      dockerfile: Dockerfile
+    # build:
+    #   context: ./frontend/myapp
+    #   dockerfile: Dockerfile
+    image: abhilashsivaraman/react-spring:frontend
     ports:
       - "3000:3000"
     depends_on:
